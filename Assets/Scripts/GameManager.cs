@@ -56,13 +56,11 @@ public class GameManager : MonoBehaviour
 	public static void SaveHighScore()
 	{
 		
-		Debug.Log("checking for high score. high score = " + HighScoreValue + ", score = " + Score);
 		if (Score > HighScoreValue)
 		{
 			SaveData data = new SaveData();
 			data.highScoreValue = Score;
 			data.highScoreName = PlayerName;
-			Debug.Log("new high score saved");
 			string json = JsonUtility.ToJson(data);
 			File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
 		}
@@ -80,8 +78,6 @@ public class GameManager : MonoBehaviour
 
 			HighScoreName = data.highScoreName;
 			HighScoreValue = data.highScoreValue;
-			Debug.Log("high score loaded");
-			Debug.Log(HighScoreName + " : " + HighScoreValue);
 		}
 	}
 }

@@ -41,7 +41,6 @@ public class MainManager : MonoBehaviour
 
         GameManager.LoadHighScore();
         HighScoreText.text = ("High Score: " + GameManager.HighScoreName + " : " + GameManager.HighScoreValue);
-        Debug.Log("High Score: " + GameManager.HighScoreName + " : " + GameManager.HighScoreValue);
     }
 
     private void Update()
